@@ -5,7 +5,7 @@ BigCommerce product and category picker for Umbraco CMS.
 
 ## How to install
 
-* Add nuget to your Umbraco 9 project.
+* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco 9 project.
 * Create an API account in BigCommerce. The API account needs read-only access to Products. <br>
 The Access token for this account will be added to the Umbraco.BigCommercePicker configuration.<br>
 TODO: image.
