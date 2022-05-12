@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <ContentTargetFolders>.</ContentTargetFolders>
+		<Owner>Kruso (https://kruso.agency)</Owner>
+	    <Authors>Kruso</Authors>
+        <PackageId>Kruso.Umbraco.BigCommercePicker</PackageId>
+        <Title>Kruso.Umbraco.BigCommercePicker</Title>
+        <Description>BigCommerce product/category picker for Umbraco CMS.</Description>
+	    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>Umbraco; BigCommerce</PackageTags>
+        <RootNamespace>Kruso.Umbraco.BigCommercePicker</RootNamespace>
+	    <Version>1.0.0-preview</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Umbraco.Cms.Web.Website" Version="[9.4.3, 10)" />
+        <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[9.4.3, 10)" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="App_Plugins\Kruso.Umbraco.BigCommercePicker\**\*.*">
+            <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+        </Content>
+        <None Include="build\**\*.*">
+            <Pack>True</Pack>
+            <PackagePath>buildTransitive</PackagePath>
+        </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="AddApiBaseUrl.cs" />
+      <Compile Remove="BigCommercePickerComposer.cs" />
+    </ItemGroup>
+</Project>

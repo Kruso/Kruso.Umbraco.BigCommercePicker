@@ -1,0 +1,5 @@
+﻿<div ng-controller="Kruso.Umbraco.BigCommercePicker.PropertyEditors.OrderByPickerController as vm">
+    <select ng-model="model.value">
+        <option ng-repeat="option in vm.options" value="{{ option.key }}" ng-bind="option.label"></option>
+    </select>
+</div>

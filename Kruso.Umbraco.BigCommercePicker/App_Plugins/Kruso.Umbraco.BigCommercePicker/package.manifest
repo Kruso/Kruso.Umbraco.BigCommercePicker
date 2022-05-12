@@ -1,0 +1,9 @@
+﻿{
+  "javascript": [
+    "~/App_Plugins/Kruso.Umbraco.BigCommercePicker/Resources/BigCommerceResource.js",
+    "~/App_Plugins/Kruso.Umbraco.BigCommercePicker/Overlays/BigCommercePickerOverlayController.js",
+    "~/App_Plugins/Kruso.Umbraco.BigCommercePicker/PropertyEditors/BigCommercePickerController.js",
+    "~/App_Plugins/Kruso.Umbraco.BigCommercePicker/PropertyEditors/EntityTypePickerController.js",
+    "~/App_Plugins/Kruso.Umbraco.BigCommercePicker/PropertyEditors/OrderByPickerController.js"
+  ]
+}
