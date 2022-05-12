@@ -27,10 +27,14 @@ services.AddBigCommercePicker(new List<BigCommerceServiceConfiguration>
 
 
 ## How to use
-TODO
+Add a BigCommerce picker to your content type. Note the configration that can be made when creating the editor (e.g. should this be a picker for products or categories?).
+<br><br>
+When rendering you can use the strongly typed collection
+
 
 
 ## Roadmap
 * Show product brand when selecting products to help editor select correct product.
 * Show product categories when selecting products to help editor select correct product.
-* Possible to set sort order for the selected products/categories (OrderByPicker.html)
+* Possible to set number of items that are allowed to be selected by editor.
+* Possible to set sort order for the selected products/categories.
