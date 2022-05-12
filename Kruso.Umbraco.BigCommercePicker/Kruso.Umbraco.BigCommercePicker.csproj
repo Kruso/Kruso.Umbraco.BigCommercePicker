@@ -11,6 +11,8 @@
         <PackageTags>Umbraco; BigCommerce</PackageTags>
         <RootNamespace>Kruso.Umbraco.BigCommercePicker</RootNamespace>
 	    <Version>1.0.0-preview</Version>
+	    <PackageProjectUrl>https://github.com/Kruso/Kruso.Umbraco.BigCommercePicker/</PackageProjectUrl>
+	    <PackageIcon>UmbracoBigLogo.png</PackageIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -32,5 +34,12 @@
     <ItemGroup>
       <Compile Remove="AddApiBaseUrl.cs" />
       <Compile Remove="BigCommercePickerComposer.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="UmbracoBigLogo.png">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
 </Project>
