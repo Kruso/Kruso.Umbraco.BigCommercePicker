@@ -19,14 +19,11 @@ namespace Kruso.Umbraco.BigCommercePicker.Models
         public string Sku { get; set; }
 
         /// <summary>
-        /// The product description, which can include HTML formatting. 
+        /// The product description, which may be HTML formatted. 
         /// </summary>
         [JsonProperty(PropertyName = "description")]
         public string Description { get; set; }
 
-        /// <summary>
-        /// An array of IDs for the categories to which this product belongs. 
-        /// </summary>
         [JsonProperty(PropertyName = "categories")]
         public List<int> Categories { get; set; }
 
@@ -36,8 +33,35 @@ namespace Kruso.Umbraco.BigCommercePicker.Models
         [JsonProperty(PropertyName = "is_visible")]
         public bool IsVisible { get; set; }
 
+        [JsonProperty(PropertyName = "weight")]
+        public float? Weight { get; set; }
+
+        [JsonProperty(PropertyName = "width")]
+        public float? Width { get; set; }
+
+        [JsonProperty(PropertyName = "depth")]
+        public float? Depth { get; set; }
+
+        [JsonProperty(PropertyName = "height")]
+        public float? Height { get; set; }
+
+        /// <summary>
+        /// The price may include tax, based on the store settings. 
+        /// </summary>
+        [JsonProperty(PropertyName = "price")]
+        public float? Price { get; set; }
+
+        [JsonProperty(PropertyName = "sale_price")]
+        public float? SalePrice { get; set; }
+
+        [JsonProperty(PropertyName = "custom_url")]
+        public CustomUrl CustomUrl { get; set; }
+
+        [JsonProperty(PropertyName = "images")]
+        public List<ProductImage> Images { get; set; }
+
         [JsonProperty(PropertyName = "variants")]
-        public IEnumerable<Variant> Variants { get; set; }
+        public List<Variant> Variants { get; set; }
 
     }
 }

@@ -10,7 +10,7 @@ namespace Kruso.Umbraco.BigCommercePicker.Controllers
 {
     public class BigComResourceController : UmbracoAuthorizedApiController
     {
-        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,variants,type,availability,custom_url,categories";
+        private const string ProductFields = "name,sku,width,height,dept,price,id,variants,type,availability,custom_url,categories";
         private const string CategoryFields = "name,id,is_visible,custom_url,parent_id";
 
         private readonly BigCommerceServiceResolver _bigCommerceServiceResolver;

@@ -12,7 +12,7 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
     {
         private readonly BigCommerceServiceResolver _bigCommerceServiceResolver;
         private readonly IVariationContextAccessor _variationContextAccessor;
-        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,type,availability,custom_url";
+        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,type,availability,custom_url,images,variants";
         private const string CategoryFields = "name,id,is_visible,custom_url";
 
         public BigCommercePickerValueConverter(BigCommerceServiceResolver bigCommerceServiceResolver, IVariationContextAccessor variationContextAccessor)
@@ -79,7 +79,7 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
             }
             else if (entityType == EntityType.Product)
             {
-                var query = $"?id:in={string.Join(",", entityIds)}&include_fields={ProductFields}";
+                var query = $"?id:in={string.Join(",", entityIds)}&include=variants,images&include_fields={ProductFields}";
                 var productsResponse = _bigCommerceServiceResolver.GetService(_variationContextAccessor.VariationContext.Culture).GetProducts(query).GetAwaiter().GetResult();
                 if (isMultiPicker)
                 {

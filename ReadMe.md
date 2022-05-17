@@ -1,6 +1,7 @@
 # Kruso.Umbraco.BigCommercePicker
 
-BigCommerce product and category picker for Umbraco CMS.
+BigCommerce product and category picker for Umbraco CMS.<br>
+Created with a lot of "inspiration" :smiley: from Umbraco HQ´s [CommerceToolsPicker](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools) 
 
 
 ## How to install
@@ -16,10 +17,18 @@ Sample configuration, added to `ConfigureServices` in `Startup.cs`:
 ``` 
 services.AddBigCommercePicker(new List<BigCommerceServiceConfiguration>
 {
+    //add store used for en-US language
+    new ()
+    {
+        LanguageCode = "en-US",
+        StoreHash = "xd3iks453e",
+        AuthToken = "5rs4rl0ibo54f2c7zht5bsdft3rk97r"
+    }
+    //add store for all other languages
     new ()
     {
         StoreHash = "zut2ikj1ae",
-        AuthToken = "lx2jkul0ibo54f2c7zht5bqj4xqyom2"
+        AuthToken = "lx2jkul0ibo54f2c7zhtrl0ibo54fe"
     }
 });
  ```       
@@ -33,9 +42,20 @@ Add a BigCommerce picker to your content type. Note the configration that can be
 <br>
 When rendering you can use the strongly typed collection
 ```
-@foreach (Category category in Model.BigCommerceCategory)
+@foreach (Product product in Model.BigCommerceProducts)
 {
-    @category.Name <br/>
+    @(product.Name + " - " + product.Price)  <br/>
+    @if (!string.IsNullOrEmpty(product.Images[0]?.UrlThumbnail))
+    {
+        <img src="@product.Images[0].UrlThumbnail" /> 
+    }
+    @foreach (Variant variant in product.Variants)
+    {
+       @if (!string.IsNullOrEmpty(variant.ImageUrl))
+       {
+           <img src="@variant.ImageUrl" /> 
+       }
+    }
 }
 ```
 
