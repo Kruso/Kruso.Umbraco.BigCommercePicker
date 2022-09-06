@@ -12,7 +12,7 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
     {
         private readonly BigCommerceServiceResolver _bigCommerceServiceResolver;
         private readonly IVariationContextAccessor _variationContextAccessor;
-        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,type,availability,custom_url,images,variants";
+        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,type,availability,custom_url,images,variants,is_visible";
         private const string CategoryFields = "name,id,is_visible,custom_url";
 
         public BigCommercePickerValueConverter(BigCommerceServiceResolver bigCommerceServiceResolver, IVariationContextAccessor variationContextAccessor)
