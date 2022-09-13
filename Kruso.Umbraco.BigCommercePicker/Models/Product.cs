@@ -63,5 +63,9 @@ namespace Kruso.Umbraco.BigCommercePicker.Models
         [JsonProperty(PropertyName = "variants")]
         public List<Variant> Variants { get; set; }
 
+        // Brand name is not part of the response from BigCommerce. It's added afterwards.
+        [JsonProperty(PropertyName = "brand_name")]
+        public string BrandName { get; set; }
+
     }
 }
