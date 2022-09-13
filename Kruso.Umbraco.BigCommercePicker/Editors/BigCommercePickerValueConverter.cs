@@ -12,7 +12,7 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
     {
         private readonly BigCommerceServiceResolver _bigCommerceServiceResolver;
         private readonly IVariationContextAccessor _variationContextAccessor;
-        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,type,availability,custom_url,images,variants,is_visible";
+        private const string ProductFields = "name,sku,weight,width,height,dept,price,id,type,availability,custom_url,images,is_visible";
         private const string CategoryFields = "name,id,is_visible,custom_url";
 
         public BigCommercePickerValueConverter(BigCommerceServiceResolver bigCommerceServiceResolver, IVariationContextAccessor variationContextAccessor)
@@ -26,8 +26,9 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
 
         public override Type GetPropertyValueType(IPublishedPropertyType propertyType)
         {
-            var isMultiPicker = IsMultiPicker(propertyType);
-            var entityType = GetEntityType(propertyType);
+            var editorConfig = propertyType.DataType.ConfigurationAs<BigCommercePickerConfiguration>();
+            var isMultiPicker = IsMultiPicker(editorConfig);
+            var entityType = GetEntityType(editorConfig);
 
             if (entityType == EntityType.Category)
             {
@@ -50,7 +51,6 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
 
             var entityIds = source.ToString()
                 .Split(new [] {','}, StringSplitOptions.RemoveEmptyEntries)
-                //.Select(Guid.Parse)
                 .ToArray();
             return entityIds;
         }
@@ -63,8 +63,9 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
             }
 
             var entityIds = (string[])source;
-            var entityType = GetEntityType(propertyType);
-            var isMultiPicker = IsMultiPicker(propertyType);
+            var editorConfig = propertyType.DataType.ConfigurationAs<BigCommercePickerConfiguration>();
+            var entityType = GetEntityType(editorConfig);
+            var isMultiPicker = IsMultiPicker(editorConfig);
 
             if (entityType == EntityType.Category)
             {
@@ -79,7 +80,7 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
             }
             else if (entityType == EntityType.Product)
             {
-                var query = $"?id:in={string.Join(",", entityIds)}&include=variants,images&include_fields={ProductFields}";
+                var query = $"?id:in={string.Join(",", entityIds)}&include=images{(editorConfig.IncludeVariants ? ",variants" : "")}&include_fields={ProductFields}{(editorConfig.IncludeVariants ? ",variants" : "")}";
                 var productsResponse = _bigCommerceServiceResolver.GetService(_variationContextAccessor.VariationContext.Culture).GetProducts(query).GetAwaiter().GetResult();
                 if (isMultiPicker)
                 {
@@ -92,17 +93,16 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
             return null;
         }
 
-        private static bool IsMultiPicker(IPublishedPropertyType propertyType)
+        private static bool IsMultiPicker(BigCommercePickerConfiguration config)
         {
-            var config = propertyType.DataType.ConfigurationAs<BigCommercePickerConfiguration>();
             var isMultiPicker = !config.ValidationLimit.Max.HasValue || config.ValidationLimit.Max.Value > 1;
             return isMultiPicker;
         }
 
-        private static EntityType GetEntityType(IPublishedPropertyType propertyType)
+        private static EntityType GetEntityType(BigCommercePickerConfiguration config)
         {
-            var config = propertyType.DataType.ConfigurationAs<BigCommercePickerConfiguration>();
             return (EntityType)Enum.Parse(typeof(EntityType), config.EntityType);
         }
+       
     }
 }

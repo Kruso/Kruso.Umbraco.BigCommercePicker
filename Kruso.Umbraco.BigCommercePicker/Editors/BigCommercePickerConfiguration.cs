@@ -19,6 +19,9 @@ namespace Kruso.Umbraco.BigCommercePicker.Editors
         [ConfigurationField("validationLimit", "Amount", "numberrange", Description = "Set a required range of items selected")]
         public NumberRange ValidationLimit { get; set; } = new NumberRange();
 
+        [ConfigurationField("includeProductVariants", "Include variants", "boolean", Description = "Include variants when fetching products (may decrease performance).")]
+        public bool IncludeVariants { get; set; } = false;
+
         //[ConfigurationField("pageSize", "Page Size", "number", Description = "Number of items per page in picker")]
         //public int PageSize { get; set; }
 
