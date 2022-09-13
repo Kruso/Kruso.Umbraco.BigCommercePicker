@@ -1,12 +1,12 @@
 # Kruso.Umbraco.BigCommercePicker
 
 BigCommerce product and category picker for Umbraco CMS.<br>
-Created with a lot of "inspiration" :smiley: from Umbraco HQ´s [CommerceToolsPicker](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools) 
+Created with a lot of "inspiration" :wink: from Umbraco HQ´s [CommerceToolsPicker](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools) 
 
 
 ## How to install
 
-* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco 9+ project.
+* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco (v10) project.
 * Create an API account in BigCommerce. The API account needs *read-only* access to *Products*. <br>
 The Access token for this account will be added to the Umbraco.BigCommercePicker configuration.<br>
 
@@ -60,7 +60,6 @@ When rendering you can use the strongly typed collection
 ```
 
 ## Roadmap
-* Show product brand when selecting products to help editor select correct product.
 * Show product categories when selecting products to help editor select correct product.
 * Possible to set number of items that are allowed to be selected by editor.
 * Possible to set sort order for the selected products/categories.
