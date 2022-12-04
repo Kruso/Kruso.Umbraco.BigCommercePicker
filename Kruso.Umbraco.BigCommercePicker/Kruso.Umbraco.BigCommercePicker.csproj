@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <ContentTargetFolders>.</ContentTargetFolders>
 		<Owner>Kruso (https://kruso.agency)</Owner>
 	    <Authors>Kruso</Authors>
@@ -10,14 +10,18 @@
 	    <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>Umbraco; BigCommerce</PackageTags>
         <RootNamespace>Kruso.Umbraco.BigCommercePicker</RootNamespace>
-	    <Version>1.1.0</Version>
+	    <Version>2.1.0</Version>
 	    <PackageProjectUrl>https://github.com/Kruso/Kruso.Umbraco.BigCommercePicker/</PackageProjectUrl>
 	    <PackageIcon>UmbracoBigLogo.png</PackageIcon>
     </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.0.0-rc3, 11)" />
-		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.0.0-rc3, 11)" />
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="[10.1.1, 11)" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="[10.1.1, 11)" />
+	</ItemGroup>
+	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.0" />
 	</ItemGroup>
 
     <ItemGroup>
@@ -36,10 +40,11 @@
       <Compile Remove="BigCommercePickerComposer.cs" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Update="UmbracoBigLogo.png">
+	<ItemGroup>
+      <Content Include="UmbracoBigLogo.png">
         <Pack>True</Pack>
         <PackagePath>\</PackagePath>
-      </None>
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 </Project>

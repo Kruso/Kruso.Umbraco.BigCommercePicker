@@ -6,8 +6,8 @@ Created with a lot of "inspiration" :smiley: from Umbraco HQ´s [CommerceToolsPic
 
 ## How to install
 
-* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco 9+ project.
-* Create an API account in BigCommerce. The API account needs *read-only* access to *Products*. <br>
+* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco (v10+) project.
+* Create an [API account in BigCommerce](https://support.bigcommerce.com/s/article/Store-API-Accounts?language=en_US). The API account needs *read-only* access to *Products*. <br>
 The Access token for this account will be added to the Umbraco.BigCommercePicker configuration.<br>
 
 ### Configuration
@@ -60,7 +60,6 @@ When rendering you can use the strongly typed collection
 ```
 
 ## Roadmap
-* Show product brand when selecting products to help editor select correct product.
 * Show product categories when selecting products to help editor select correct product.
 * Possible to set number of items that are allowed to be selected by editor.
 * Possible to set sort order for the selected products/categories.
