@@ -6,8 +6,8 @@ Created with a lot of "inspiration" :wink: from Umbraco HQ´s [CommerceToolsPicke
 
 ## How to install
 
-* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco (v10) project.
-* Create an API account in BigCommerce. The API account needs *read-only* access to *Products*. <br>
+* Add [nuget](https://www.nuget.org/packages/Kruso.Umbraco.BigCommercePicker/) to your Umbraco (v10+) project.
+* Create an [API account in BigCommerce](https://support.bigcommerce.com/s/article/Store-API-Accounts?language=en_US). The API account needs *read-only* access to *Products*. <br>
 The Access token for this account will be added to the Umbraco.BigCommercePicker configuration.<br>
 
 ### Configuration
