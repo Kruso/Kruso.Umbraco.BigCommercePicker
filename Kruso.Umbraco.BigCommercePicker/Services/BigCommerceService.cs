@@ -39,6 +39,12 @@ namespace Kruso.Umbraco.BigCommercePicker.Services
             return await SendAsync<CategoriesResponse>(HttpMethod.Get, pathAndQuery);
         }
 
+        public async Task<BrandsResponse> GetBrands(string queryString = "")
+        {
+            var pathAndQuery = $"brands{queryString}";
+            return await SendAsync<BrandsResponse>(HttpMethod.Get, pathAndQuery);
+        }
+
 
         private async Task<TResult> SendAsync<TResult>(HttpMethod httpMethod, string pathAndQuery, object model = null, CancellationToken cancellationToken = default) where TResult : class
         {

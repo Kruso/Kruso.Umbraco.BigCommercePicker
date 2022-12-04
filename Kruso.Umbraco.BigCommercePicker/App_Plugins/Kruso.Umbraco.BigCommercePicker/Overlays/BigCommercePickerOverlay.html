@@ -64,19 +64,19 @@
 
                             <div class="umb-table-cell">
                                 <div class="umb-table-body__icon umb-table-body__fileicon " ng-if="item.images.length > 0">
-                                    <img ng-src="{{ item.images[0].url }}" width="{{item.images[0].width}}" height="{{item.images[0].height}}" style="max-height:1em;max-width:auto;" />
+                                    <img alt="" ng-src="{{ item.images[0].url_tiny }}" width="30" style="max-height:1em;max-width:auto;" />
                                 </div>
                                 <umb-icon icon="{{ item.icon }}" class="icon-tag umb-table-body__icon umb-table-body__fileicon" ng-if="!item.images || item.images.length === 0"></umb-icon>
                                 <umb-icon icon="icon-check" class="icon-check umb-table-body__icon umb-table-body__checkicon"></umb-icon>
                             </div>
                             <div class="umb-table-cell umb-table__name">
-                                {{ item.name }}
+                                {{ item.name }} <span ng-if="item.brand_name && item.brand_name != ''">&nbsp;[{{ item.brand_name }}]</span>
                             </div>
                             <div class="umb-table-cell" ng-if="vm.columns.sku">
-                                {{ item.sku }}
+                                {{ item.sku }} 
                             </div>
                             <div class="umb-table-cell" ng-if="vm.columns.variants" style="font-size: 13px">
-                                {{ item.variantNames | truncate:true:36 }}
+                                {{ item.variantNames | truncate:true:50 }}
                             </div>
                             <!--<div class="umb-table-cell" ng-if="vm.columns.prices">
                                 {{ item.prices }}

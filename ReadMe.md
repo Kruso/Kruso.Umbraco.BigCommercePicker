@@ -1,7 +1,7 @@
 # Kruso.Umbraco.BigCommercePicker
 
 BigCommerce product and category picker for Umbraco CMS.<br>
-Created with a lot of "inspiration" :smiley: from Umbraco HQ´s [CommerceToolsPicker](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools) 
+Created with a lot of "inspiration" :wink: from Umbraco HQ´s [CommerceToolsPicker](https://github.com/umbraco/Umbraco.Cms.Integrations/tree/main/src/Umbraco.Cms.Integrations.Commerce.CommerceTools) 
 
 
 ## How to install
