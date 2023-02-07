@@ -10,10 +10,11 @@
 	    <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>Umbraco; BigCommerce; umbraco-marketplace</PackageTags>
         <RootNamespace>Kruso.Umbraco.BigCommercePicker</RootNamespace>
-	    <Version>2.2.0</Version>
+	    <Version>2.3.0</Version>
 	    <PackageProjectUrl>https://github.com/Kruso/Kruso.Umbraco.BigCommercePicker/</PackageProjectUrl>
 	    <PackageIcon>UmbracoBigLogo.png</PackageIcon>
 	    <RepositoryUrl>https://github.com/Kruso/Kruso.Umbraco.BigCommercePicker/</RepositoryUrl>
+	    <PackageReadmeFile>NugetReadMe.md</PackageReadmeFile>
     </PropertyGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
@@ -48,4 +49,11 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
+
+	<ItemGroup>
+	  <None Include="NugetReadMe.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 </Project>
