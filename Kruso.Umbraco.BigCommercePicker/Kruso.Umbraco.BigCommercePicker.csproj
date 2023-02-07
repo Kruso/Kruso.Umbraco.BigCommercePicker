@@ -8,11 +8,12 @@
         <Title>Kruso.Umbraco.BigCommercePicker</Title>
         <Description>BigCommerce product/category picker for Umbraco CMS.</Description>
 	    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <PackageTags>Umbraco; BigCommerce</PackageTags>
+        <PackageTags>Umbraco; BigCommerce; umbraco-marketplace</PackageTags>
         <RootNamespace>Kruso.Umbraco.BigCommercePicker</RootNamespace>
-	    <Version>2.1.0</Version>
+	    <Version>2.2.0</Version>
 	    <PackageProjectUrl>https://github.com/Kruso/Kruso.Umbraco.BigCommercePicker/</PackageProjectUrl>
 	    <PackageIcon>UmbracoBigLogo.png</PackageIcon>
+	    <RepositoryUrl>https://github.com/Kruso/Kruso.Umbraco.BigCommercePicker/</RepositoryUrl>
     </PropertyGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
