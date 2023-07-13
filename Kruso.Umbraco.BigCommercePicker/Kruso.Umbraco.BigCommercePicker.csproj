@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <ContentTargetFolders>.</ContentTargetFolders>
@@ -23,7 +23,7 @@
 	</ItemGroup>
 	<ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
 		<PackageReference Include="Umbraco.Cms.Web.Website" Version="11.0" />
-		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.0" />
+		<PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="11.4.2" />
 	</ItemGroup>
 
     <ItemGroup>
